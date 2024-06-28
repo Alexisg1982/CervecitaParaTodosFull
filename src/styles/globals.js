@@ -1,5 +1,6 @@
 import Default from "./Default.js";
 
+
 const GlobalStyles = {
   
   htmlProps:{
@@ -16,5 +17,6 @@ const GlobalStyles = {
 
   
 };
+
 
 export default GlobalStyles;
