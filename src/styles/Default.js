@@ -23,7 +23,7 @@ const Default = {
         fontSize: "1.125rem", /* 15.75px en mobiles, 18px en tablets, 20.25px en desktops */
     },
     h6: {
-        fontSize: "1rem", /* 14px en mobiles, 16px en tablets, 18px en desktops */
+        fontSize: "1rem", /* 14px en mobiles, 16px en tablets, 18px en desktops USAMOS ESTE EN HTML GLOBALSSTYLES.JSX*/
     },
 
     
@@ -33,7 +33,9 @@ const Default = {
 
     // BORDER RADIUS
     rounded: "0.5rem",
+
 };
+
 export default Default;
 
 // @media (min-width: 768px) {

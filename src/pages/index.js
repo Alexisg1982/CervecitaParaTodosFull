@@ -1,7 +1,7 @@
 import React from "react";
-import GlobalStyles from "@/styles/globals";
 import Image from "next/image";
-// STYLES
+/// STYLES
+import GlobalStyles from "@/styles/GlobalStyles";
 
 const Index = () => {
   return (
@@ -12,7 +12,7 @@ const Index = () => {
         height={50}
         alt="Picture of the author"
       />
-      <h1 style={[GlobalStyles.title]}>Cervesita para todos</h1>
+      <h1 style={GlobalStyles.paragraph}>Cervesita para todos</h1>
     </>
   );
 };
