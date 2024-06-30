@@ -1,0 +1,18 @@
+/* mediaQueries.css
+@media (max-width: 480px) {
+  html {
+    background-color: lightcoral;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    background-color: lightgreen;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    background-color: lightgoldenrodyellow;
+  }
+} */

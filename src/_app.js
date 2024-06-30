@@ -1,10 +1,13 @@
-import React from 'react';
-import '@/styles/globals.js';
-import '@/styles/Default.js';
-// import '@/styles/style.css';
+import React from "react";
+import "@/styles/index";
+import '@/styles/mediaQueries.css';
 
 
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <div className="">
+      <Component {...pageProps} />;
+    </div>
+  );
 }
