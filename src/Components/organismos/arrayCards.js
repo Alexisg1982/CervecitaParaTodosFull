@@ -1,24 +1,70 @@
-const cardsArray = [
+export const cardsArray = [
     {
-      title: 'Card 1',
-      description: 'primera card',
+      title: 'Cerveza SLVDR',
+      description: 'Sour Ale Frutilla & Mango 2,8% abv',
       imageUrl: '/assets/latanegrayblanca.png',
+      precio: 196,
+      
     },
     {
-      title: 'Cerveza de malta',
-      description: 'segunda card',
-      imageUrl: '/card2.jpg',
+      title: 'Cerveza Unidas',
+      description: 'Malta de Rio Negro 6,5% abv',
+      imageUrl: '/assets/numen8.png',
+      precio: 100,
     },
     {
-    title: 'Card 3',
-    description: 'tercera card',
-    imageUrl: '/card3.jpg',
+    title: 'Cerveza Baba',
+    description: 'Unicamente en la región de la Patagonia 4,8% abv',
+    imageUrl: '/assets/numen2.png',
+    precio: 150,
+    },
+  {
+    title: 'Cerveza Bombon Asesino',
+    description: 'Un trago especial para los asesinos de la cevada 3,8% abv',
+    imageUrl: '/assets/numen3.png',
+    precio: 210,
   },
   {
-    title: 'Card 4',
-    description: 'cuarta card',
-    imageUrl: '/card4.jpg',
+    title: 'Cerveza Juici Red',
+    description: 'Jugo de frutas naturales malta y cevada 8,8% abv',
+    imageUrl: '/assets/numen6.png',
+    precio: 185,
+  },
+
+  {
+    title: 'Cerveza Ocaso',
+    description: 'Tomar es una ocasión 5,5% abv',
+    imageUrl: '/assets/numen7.png',
+    precio: 205,
+  },
+
+  {
+    title: 'Cerveza Baba',
+    description: 'Unicamente en la región de la Patagonia 4,8% abv',
+    imageUrl: '/assets/numen2.png',
+    precio: 150,
+    },
+  {
+    title: 'Cerveza Bombon Asesino',
+    description: 'Un trago especial para los asesinos de la cevada 3,8% abv',
+    imageUrl: '/assets/numen3.png',
+    precio: 210,
+  },
+  {
+    title: 'Cerveza Juici Red',
+    description: 'Jugo de frutas naturales malta y cevada 8,8% abv',
+    imageUrl: '/assets/numen6.png',
+    precio: 185,
+  },
+
+  {
+    title: 'Cerveza Ocaso',
+    description: 'Tomar es una ocasión 5,5% abv',
+    imageUrl: '/assets/numen7.png',
+    precio: 205,
   }
+
+
   ];
 
-  export default cardsArray;
+ 
