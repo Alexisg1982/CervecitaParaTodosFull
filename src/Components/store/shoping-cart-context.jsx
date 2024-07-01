@@ -2,7 +2,7 @@
 
 import { createContext, useReducer } from 'react';
 
-import { arrayCardsReducer } from './shopping-cart-reducer.js/arrayCards.js';
+import {cardsArray} from "./arrayCards.js";
 
 export const CartContext = createContext({
   items: [],
@@ -26,7 +26,7 @@ function shoppingCartReducer(state, action) {
       };
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
-      const product = arrayCards.find(
+      const product = cardsArray.find(
         (product) => product.id === action.payload
       );
       updatedItems.push({
@@ -101,6 +101,6 @@ export default function CartContextProvider({ children }) { //children??//reempl
   };
 
   return (
-    <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>//reemplazar por lo que va..children//
+    <CartContext.Provider value={ctxValue}>{children}</CartContext.Provider>//reemplazar children por lo que va.//
   );
 }

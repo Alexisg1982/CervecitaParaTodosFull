@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import CardCounter from './CardCounter';
 
-const CardComponent = ({ title, description, imageUrl, precio }) => {
+const CardComponent = ({ title, description, imageUrl, precio, id }) => {
   return (
     <section style={estilos.card}>
       <div style={estilos.cardContent}>
@@ -13,7 +13,7 @@ const CardComponent = ({ title, description, imageUrl, precio }) => {
         </div>
       </div>
       <div style={estilos.counterContainer}>
-        <CardCounter precios={precio} />
+        <CardCounter precios={precio} id={id} />
       </div>
     </section>
   );
