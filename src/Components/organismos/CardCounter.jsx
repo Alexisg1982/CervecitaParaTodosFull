@@ -17,8 +17,8 @@ export default function CardCounter({ precios }) {
   return (
     <div style={estilos.counter}>
       <div style={estilos.buttonContainer}>
-        <button style={estilos.button} onClick={handleMinus}>-</button>
-        <button style={estilos.button} onClick={handlePlus}>+</button>
+        <Button style={estilos.button} onClick={handleMinus}>-</Button>
+        <Button style={estilos.button} onClick={handlePlus}>+</Button>
         <p style={estilos.count}>{counter}</p>
       </div>
       <div>
@@ -39,12 +39,15 @@ const estilos = {
   buttonContainer: {
     display: 'flex',
     alignItems: 'center',
+    // backgroundColor: '#000000',
   },
   button: {
-    width: '30px',
-    height: '30px',
+    minWidth: '30px',
+    minHeight: '30px',
     fontSize: '18px',
     flex: '0 0 auto',
+    border: '2px solid #57ACD0',
+    borderRadius: '10px',
   },
   count: {
     margin: '0 7px',
