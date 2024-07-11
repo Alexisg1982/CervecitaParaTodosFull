@@ -37,7 +37,7 @@ export default function TemporaryDrawer() {
       onClick={toggleDrawer(false)}
     >
       <List>
-        {["Home", "Cervezas", "Contactanos", "Nosotros", "Tienda om line"].map(
+        {["Home", "Cervezas", "Contactanos", "Nosotros", "Tienda on line"].map(
           (text, index) => (
             <ListItem key={text} disablePadding>
               <ListItemButton>
@@ -52,7 +52,7 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        {["Loguin", "Registrarme"].map((text, index) => (
+        {["Login", "Registrarme"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
@@ -70,7 +70,7 @@ export default function TemporaryDrawer() {
     <div className="Burguer">
       <Button onClick={toggleDrawer(true)}>
         <MenuIcon
-          sx={{ width: "50px", height: "60px", color: "white" }}
+          sx={{ width: "2rem", height: "2rem", color: "white" }}
         />
       </Button>
 

@@ -8,6 +8,7 @@ import Banner from "../Components/Banner";
 import CardContextProvider from '../../Context/context';
 import CartComponent from '@/Components/CartComponent';
 import ScrollToTop from "react-scroll-to-top";
+import ShoppingCart from '@/Components/Carrito';
 
 
 
@@ -17,70 +18,20 @@ import ScrollToTop from "react-scroll-to-top";
 const index = () => {
   return (
     <>
+      <CardContextProvider>
        
       <ModalIndex />
       <ScrollToTop smooth color="#D98504" />
       <Banner />
       <Navigation />
       <MainCentro />
+      <CartComponent></CartComponent>
       <Footer />  
-      <CardContextProvider>
-        <CartComponent/>
-      <CardContextProvider/>
+      </CardContextProvider>
+      
+      
     </>
   );
-}
+  }
 
 export default index
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

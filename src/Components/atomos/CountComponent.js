@@ -2,12 +2,17 @@ import React, { useState, useContext,useEffect } from 'react';
 import Button from '@mui/material/Button';
 import {CardContext} from '../../../Context/context';
 
+
 export default function CountComponent({id, precios }) {
 
   const {items, updateItemQuantity, addItemToCart} = useContext(CardContext);
   const qty = items.find((item) => item.id === id)?.quantity;
   const counter = qty ? qty : 0;
-
+  useEffect (()=>{
+    
+    console.log (precios)
+    console.log(counter)
+   },[]) ;
 
   function handleMin(){
     if(counter > 0){

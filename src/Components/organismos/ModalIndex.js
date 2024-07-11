@@ -27,7 +27,7 @@ export default function ModalIndex() {
         aria-describedby="alert-dialog-description"
       >
         <DialogTitle id="alert-dialog-title">
-          Bienvenido /*LogoBirrin*/
+          Bienvenido <i></i>
         </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">

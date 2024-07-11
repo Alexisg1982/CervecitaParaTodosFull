@@ -110,13 +110,15 @@ function shoppingCartReducer(state, action) {
       );
       updatedItems.push({
         id: action.payload,
-        name: product.title,
-        price: product.precio,
+        title: product.title,
+        precio: product.precio,
         quantity: 1,
+        imageUrl: product.imageUrl,
+        description: product.description
       });
     }
 
-    return {
+     return {
       ...state,
       items: updatedItems,
     };
@@ -148,11 +150,13 @@ function shoppingCartReducer(state, action) {
   return state;
 }
 
+
 export default function CardContextProvider({ children }) {
   const [shoppingCartState, shoppingCartDispatch] = useReducer(
     shoppingCartReducer,
-    {
+    { 
       items: [],
+      
     }
   );
 
