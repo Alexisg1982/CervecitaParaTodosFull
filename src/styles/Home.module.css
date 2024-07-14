@@ -1,8 +1,7 @@
-.body{
-    height: 120vh;
-    
-}
-
+.body {
+    height: 270vh;
+  }
+  
 /*** Estilos del footer ***/
 
 .containerfooter {
@@ -64,7 +63,7 @@
 .Face, .whatsapp, .Map {
     display: flex;
     flex-direction: column;
-    color: #57ACD0;
+    color: #57ACD0
 }
 .Face,
 .whatsapp,

@@ -9,10 +9,11 @@ import { useTheme } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import  { useContext } from 'react';
+import  { useContext ,useState, useEffect} from 'react';
 import CartItem from './CartItem';
 import {CardContext}  from '../../Context/context';
 
@@ -21,24 +22,34 @@ export default function ShoppingCart() {
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-
+  const [itemsLength, setItemsLength] = useState(0);
   const handleClickOpen = () => {
     setOpen(true);
   };
-
   const handleClose = () => {
     setOpen(false);
   };
+    /* Cada vez que se modifica el carrito, actualizamos la cantidad de productos */
+    useEffect(() => {
+      setItemsLength(
+        items?.reduce((previous, current) => previous + current.amount, 0)
+      );
+    }, []); 
    
 const { items } = useContext(CardContext);
-
+const totalCarrito = items.reduce((total, cerveza) => {
+  return total + (cerveza.precio * cerveza.quantity);
+}, 0);
   return (
 
     <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
+        <Badge badgeContent={items.length||"0"}>
       <ShoppingCartIcon
         sx={{width:"2rem",height: "2rem", color: "#D98504"}}
-      />
+        /> 
+      </Badge>
+      
       </Button>
       <Dialog
         fullScreen={fullScreen}
@@ -77,6 +88,7 @@ const { items } = useContext(CardContext);
         />
          ))}
         </div>
+        <h1>{totalCarrito}</h1>
         <ConfirmarCompra/>
         </DialogContent>
         <DialogContent>
@@ -116,9 +128,15 @@ function ConfirmarCompra() {
     setOpen(false);
   };
 
+ 
+
+
   return (
-    <React.Fragment>
+      
+  
+  <React.Fragment>
       <Button variant="outlined" onClick={handleClickOpen}>
+       
         Confirmar compra
       </Button>
       <BootstrapDialog
