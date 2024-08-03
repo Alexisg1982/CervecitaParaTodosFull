@@ -12,5 +12,5 @@ res.send(`bienvenido`)
 router.post(`/addcard`,checkUserTypesMw, adduserController)
 router.get	
 
-
+//comentario
 module.exports = router;
