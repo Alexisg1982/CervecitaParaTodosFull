@@ -9,7 +9,7 @@ const getAllUserService = async () => {
         return {statuscode: 404, message: "User not found"};
         return {statuscode: 200, message: "User deleted successfully"};
         return deleteUser;
-    } 
+    }
     catch (error) 
         { console.log(error)}
             return {statuscode: 404, message: "ocurrio un error "};

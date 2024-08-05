@@ -171,16 +171,29 @@ export default function CardContextProvider({ children }) {
   const { cardsArray, items } = shoppingCartState;
   const readState = async () => {
     const ENDPOINT = {
-      cardsArray: "http://localhost:5000/cardsArray",
-      items: "http://localhost:5000/items",
+      cardsArray: "http://localhost:3000/cardsArray",
+      items: "http://localhost:3000/items",
     };
-    const responseProducts = await axios.get(ENDPOINT.cardsArray),
-      responseCart = await axios.get(ENDPOINT.items);
-    const cardsList = await responseProducts.data,
-      itemsList = await responseCart.data;
+    async function fetchData() {
+      try {
+        const responseProducts = await axios.get(ENDPOINT.cardsArray);
+        const responseCart = await axios.get(ENDPOINT.items);
+        
+        const cardsList = responseProducts.data;
+        const itemsList = responseCart.data;
+        
+        
+        console.log(cardsList);
+        console.log(itemsList);
+      } catch (error) {
+        console.error('Error al obtener los datos:', error);
+      }
+    }
+    
+    fetchData();
 
-    // console.log(productsList);
-    // console.log(cartItems);
+    
+    
     shoppingCartDispatch({
       type: "READ_STATE",
       payload: {
@@ -193,7 +206,7 @@ export default function CardContextProvider({ children }) {
   useEffect(() => {
     readState();
   }, []);
-  //console.log(shoppingCartState);
+  
 
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
