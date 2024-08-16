@@ -5,84 +5,7 @@ import axios from "axios";
 import { useState } from "react";
 
 import { uptime } from "process";
-import { cardsArray } from "@/Components/organismos/arrayCards";
-
-//este import no me funciona, lo tuve que declarar aqui
-// const cardsArray = [
-//   {
-//     title: "Cerveza SLVDR",
-//     description: "Sour Ale Frutilla & Mango 2,8% abv",
-//     imageUrl: "/assets/latanegrayblanca.png",
-//     precio: 196,
-//     id: "1",
-//   },
-//   {
-//     title: "Cerveza Unidas",
-//     description: "Malta de Rio Negro 6,5% abv",
-//     imageUrl: "/assets/numen8.png",
-//     precio: 100,
-//     id: "2",
-//   },
-//   {
-//     title: "Cerveza Baba",
-//     description: "Unicamente en la región de la Patagonia 4,8% abv",
-//     imageUrl: "/assets/numen2.png",
-//     precio: 150,
-//     id: "3",
-//   },
-//   {
-//     title: "Cerveza Bombon Asesino",
-//     description: "Un trago especial para los asesinos de la cevada 3,8% abv",
-//     imageUrl: "/assets/numen3.png",
-//     precio: 210,
-//     id: "4",
-//   },
-//   {
-//     title: "Cerveza Juici Red",
-//     description: "Jugo de frutas naturales malta y cevada 8,8% abv",
-//     imageUrl: "/assets/numen6.png",
-//     precio: 185,
-//     id: "5",
-//   },
-
-//   {
-//     title: "Cerveza Ocaso",
-//     description: "Tomar es una ocasión 5,5% abv",
-//     imageUrl: "/assets/numen7.png",
-//     precio: 205,
-//     id: "6",
-//   },
-
-//   {
-//     title: "Cerveza Baba",
-//     description: "Unicamente en la región de la Patagonia 4,8% abv",
-//     imageUrl: "/assets/numen2.png",
-//     precio: 150,
-//     id: "7",
-//   },
-//   {
-//     title: "Cerveza Bombon Asesino",
-//     description: "Un trago especial para los asesinos de la cevada 3,8% abv",
-//     imageUrl: "/assets/numen3.png",
-//     precio: 210,
-//     id: "8",
-//   },
-//   {
-//     title: "Cerveza Juici Red",
-//     description: "Jugo de frutas naturales malta y cevada 8,8% abv",
-//     imageUrl: "/assets/numen6.png",
-//     precio: 185,
-//     id: "9",
-//   },
-
-//   {
-//     title: "Cerveza Ocaso",
-//     description: "Tomar es una ocasión 5,5% abv",
-//     imageUrl: "/assets/numen7.png",
-//     precio: 205,
-//     id: "10",
-//   },
-// ];
+// import { cardsArray } from "@/Components/organismos/arrayCards";
 
 export const CardContext = createContext();
 
@@ -171,42 +94,40 @@ export default function CardContextProvider({ children }) {
   const { cardsArray, items } = shoppingCartState;
   const readState = async () => {
     const ENDPOINT = {
-      cardsArray: "http://localhost:3000/cardsArray",
-      items: "http://localhost:3000/items",
+      cardsArray: "http://localhost:5000/cervezas",
+      items: "http://localhost:5000/items",
     };
+    
+
     async function fetchData() {
       try {
         const responseProducts = await axios.get(ENDPOINT.cardsArray);
-        const responseCart = await axios.get(ENDPOINT.items);
-        
+        // const responseCart = await axios.get(ENDPOINT.items);
+
         const cardsList = responseProducts.data;
-        const itemsList = responseCart.data;
-        
-        
-        console.log(cardsList);
-        console.log(itemsList);
+        // const itemsList = responseCart.data;
+
+        console.log('respuesta backend', cardsList); 
+
+        shoppingCartDispatch({
+          type: "READ_STATE",
+          payload: {
+            cardsArray: cardsList.items,
+            items: [],
+          },
+        });
+        // console.log(itemsList);
       } catch (error) {
-        console.error('Error al obtener los datos:', error);
+        console.error("Error al obtener los datos:", error);
       }
     }
-    
-    fetchData();
 
-    
-    
-    shoppingCartDispatch({
-      type: "READ_STATE",
-      payload: {
-        cardsArray: cardsList,
-        items: itemsList,
-      },
-    });
+    fetchData();
   };
 
   useEffect(() => {
     readState();
   }, []);
-  
 
   function handleAddItemToCart(id) {
     shoppingCartDispatch({
@@ -229,10 +150,13 @@ export default function CardContextProvider({ children }) {
     items: items,
     addItemToCart: handleAddItemToCart,
     updateItemQuantity: handleUpdateCartItemQuantity,
+    cardsArray
   };
   // useEffect(() => {
   //   updateQuote(shoppingCartDispatch);
   // }, []);
 
-  return <CardContext.Provider value={ctxValue}>{children}</CardContext.Provider>;
+  return (
+    <CardContext.Provider value={ctxValue}>{children}</CardContext.Provider>
+  );
 }

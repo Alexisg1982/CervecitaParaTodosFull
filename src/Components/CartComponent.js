@@ -1,15 +1,13 @@
 //Mapeo Props de cards//
 import axios from "axios";
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ProductCard from '../Components/organismos/ProductCard';
-import {cardsArray} from '../Components/organismos/arrayCards';
+import { CardContext } from "../../Context/CardContext";
 
  
 export default function CartComponent() {
 
-  useEffect(() => {
-    console.log(cardsArray);
-  }, []);
+const { cardsArray } = useContext(CardContext)
 
   return (
     <div style={{backgroundColor: '#000000', display: 'flex', justifyContent: "center", flexDirection: "column", width:"100%"}}>

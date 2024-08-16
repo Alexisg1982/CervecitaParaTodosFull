@@ -5,7 +5,7 @@
 const { addUserService, getAllUserService, getUserByIdService, deleteUserService } = require("../service/userService");
 const userModels = require("../models/userModels"); 
 
-const addUserController = async (req, res) => {
+const addCardsController = async (req, res) => {
     try {
         const newUser = await addUserService(req);
         return res.status(201).json(newUser); 
@@ -14,7 +14,7 @@ const addUserController = async (req, res) => {
     }
 };
 
-const getAllUserController = async (req, res) => {
+const getAllCardsController = async (req, res) => {
     try {
         const users = await getAllUserService();
         return res.status(200).json(users); 
@@ -23,10 +23,10 @@ const getAllUserController = async (req, res) => {
     }
 };
 
-const getUserByIdController = async (req, res) => {
+const getCardsByIdController = async (req, res) => {
     const { id } = req.params;
     try {
-        const userById = await getUserByIdService(id); 
+        const userById = await getCardsByIdService(id); 
         if (!userById) {
             return res.status(404).json({ message: "User not found" }); 
         }
@@ -36,7 +36,7 @@ const getUserByIdController = async (req, res) => {
     }
 };
 
-const deleteUserController = async (req, res) => {
+const deleteCardsController = async (req, res) => {
     const { id } = req.params;
     try {
         const deletedUser = await deleteUserService(id); 
@@ -56,6 +56,6 @@ res.json (addUser)
 res.json (deleteUser)
 
 
-module.exports = {getUserByIdController, getAllUserController,
+module.exports = {getCardsByIdController, getAllCardsController,
     
-updateUserController, deleteUserController, adduserController};
+updateCardsController, deleteCardsController, addCardsController};

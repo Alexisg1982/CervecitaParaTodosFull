@@ -1,4 +1,5 @@
 //Arreglo de Crads//
+
 export const cardsArray = [
   {
     title: 'Cerveza SLVDR',

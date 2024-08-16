@@ -1,7 +1,7 @@
 
 
 
-const getAllUserService = async () => {
+const getAllCardsService = async () => {
     try {
         const deleteUser= await userModels.deleteOne ({ _id: id });
         if (deleteUser.deletedCount === 0)
@@ -17,6 +17,6 @@ const getAllUserService = async () => {
         
     }
     module.exports = {
-        getAllUserService
+        getAllCardsService
 
 }
