@@ -7,6 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Checkbox from "@mui/material/Checkbox";
+import ButtonComponent from "./atomos/Button";
 
 export default function Registrarme() {
   const [open, setOpen] = React.useState(false);

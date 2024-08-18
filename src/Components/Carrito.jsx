@@ -129,6 +129,7 @@ function ConfirmarCompra() {
   };
   const handleClose = () => {
     setOpen(false);
+
   };
 
  
