@@ -3,10 +3,12 @@ import axios from "axios";
 import React, { useEffect } from 'react'
 import ProductCard from '../Components/organismos/ProductCard';
 import {cardsArray} from '../Components/organismos/arrayCards';
-
+import { CardContext } from "../../Context/CardContext";
  
 export default function CartComponent() {
-
+  
+  //const { cardsArray } = useContext(CardContext);
+  
   useEffect(() => {
     console.log(cardsArray);
   }, []);
