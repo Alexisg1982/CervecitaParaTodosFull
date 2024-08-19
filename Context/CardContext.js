@@ -33,7 +33,7 @@ function shoppingCartReducer(state, action) {
       };
       updatedItems[existingCartItemIndex] = updatedItem;
     } else {
-      const product = cardsArray.find(
+      const product = state.cardsArray.find(
         (product) => product.id === action.payload
       );
       updatedItems.push({

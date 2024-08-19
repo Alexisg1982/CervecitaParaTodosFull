@@ -6,9 +6,9 @@ const port = 5000;
 
 app.use(cors());
 
-
 // Ruta adicional
 app.get('/cervezas', (req, res) => {
+  
     // res.send('Esta devolveria las cervezas (R de read en C.R.U.D.) ');
     res.json({
         items: cardsArray

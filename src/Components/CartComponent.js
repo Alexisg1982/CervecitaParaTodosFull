@@ -20,7 +20,7 @@ const { cardsArray } = useContext(CardContext)
             description={card.description}
             imageUrl={card.imageUrl}
             precio={card.precio}
-            // onAddToCart={onAddToCart}
+           
           />
         ))}
       </div>

@@ -6,6 +6,7 @@ import Navigation from "../Components/Navigation";
 import Footer from "../Components/Footer";
 import ScrollToTop from "react-scroll-to-top";
 
+
 const TiendaOnLine = () => {
   return (
     <>

@@ -2,12 +2,12 @@
 
 
 
-const { addUserService, getAllUserService, getUserByIdService, deleteUserService } = require("../service/userService");
+const { addCardsService, getAllCardsService, getCardsByIdService, deleteCardsService } = require("../service/cardsService");
 const userModels = require("../models/userModels"); 
 
 const addCardsController = async (req, res) => {
     try {
-        const newUser = await addUserService(req);
+        const newUser = await addCardsService(req);
         return res.status(201).json(newUser); 
     } catch (error) {
         return res.status(500).json({ message: error.message }); 
@@ -16,7 +16,7 @@ const addCardsController = async (req, res) => {
 
 const getAllCardsController = async (req, res) => {
     try {
-        const users = await getAllUserService();
+        const users = await getAllCardsService();
         return res.status(200).json(users); 
     } catch (error) {
         return res.status(500).json({ message: error.message }); 
@@ -39,7 +39,7 @@ const getCardsByIdController = async (req, res) => {
 const deleteCardsController = async (req, res) => {
     const { id } = req.params;
     try {
-        const deletedUser = await deleteUserService(id); 
+        const deletedUser = await deleteCardsService(id); 
         if (!deletedUser) {
             return res.status(404).json({ message: "User not found" }); 
         }
