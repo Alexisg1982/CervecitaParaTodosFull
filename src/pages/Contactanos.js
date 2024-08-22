@@ -24,13 +24,13 @@ const FormComponent = () => {
       if (editId) {
         // PUT request to update user
         await axios.put(
-          `http://localhost:3000/Contactanos/${editId}`,
+          `http://localhost:9000/Contactanos/${editId}`,
           formData
         );
         alert("Usuario actualizado exitosamente");
       } else {
         // POST request to create user
-        await axios.post("http://localhost:3000/Contactanos", formData);
+        await axios.post("http://localhost:9000/Contactanos", formData);
         alert("Usuario creado exitosamente");
       }
       resetForm();
@@ -43,7 +43,7 @@ const FormComponent = () => {
   const fetchUsuarios = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:3000/Contactanos"
+        "http://localhost:9000/Contactanos"
       );
       setUsuarios(response.data);
     } catch (error) {
@@ -58,7 +58,7 @@ const FormComponent = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/Contactanos/${id}`);
+      await axios.delete(`http://localhost:9000/Contactanos/${id}`);
       alert("Usuario eliminado exitosamente");
       fetchUsuarios(); // Refresh the user list
     } catch (error) {
