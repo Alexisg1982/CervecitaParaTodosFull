@@ -1,0 +1,39 @@
+
+[
+    {
+    "nombre": "laporonga",
+    "apellido": "a",
+    "email": "a@ab",
+    "password": "a"
+    },
+    {
+    "nombre": "cholo",
+    "apellido": "asno",
+    "email": "asno@gmail.com",
+    "password": "cholo"
+    },
+    {
+    "nombre": "pocho",
+    "apellido": "clo",
+    "email": "pocho@gmail.com",
+    "password": "pocho"
+    },
+    {
+    "nombre": "axel",
+    "apellido": "rose",
+    "email": "rose@gmail.com",
+    "password": "guns"
+    },
+    {
+    "nombre": "chupin",
+    "apellido": "tucumano",
+    "email": "borrachin@gmail.com",
+    "password": "1982"
+    },
+    {
+    "nombre": "polenta",
+    "apellido": "que",
+    "email": "tal@rhgorjhgo",
+    "password": "com va"
+    }
+    ]

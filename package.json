@@ -19,7 +19,7 @@
     "@mui/icons-material": "^5.16.0",
     "@mui/material": "^5.15.20",
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
-    "axios": "^1.7.2",
+    "axios": "^1.7.4",
     "bootstrap": "^5.3.3",
     "dotenv": "^16.4.5",
     "embla-carousel-autoplay": "^8.1.6",
@@ -52,5 +52,4 @@
   "keywords": [],
   "author": "",
   "license": "ISC"
-  
 }

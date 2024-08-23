@@ -28,7 +28,7 @@ app.use(cors());
 
 mongoose
   .connect(
-    "mongodb+srv://Alexis1982:Alexis1982@clustercevesita.looptnu.mongodb.net/back6/usuarios",
+    "mongodb+srv://Alexis1982:Alexis1982@clustercevesita.looptnu.mongodb.net/back6",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -38,7 +38,7 @@ mongoose
   .catch((error) => console.error("Error al conectar a MongoDB Atlas", error));
 
 // Modelo de Usuario
-const Usuario = mongoose.model("Usuario", {
+const Usuario = mongoose.model( {
   nombre: String,
   apellido: String,
   email: String,
